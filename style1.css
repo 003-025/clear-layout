@@ -2,7 +2,7 @@ html {scroll-behavior:smooth;}
 * {color: black;}
 body {margin: 15px 0px; padding:10px; background-color: rgb(255, 255, 255); color: black; overflow: scroll;}
 section {background-color: azure; padding: 15px; margin:15px 0px; color:rgb(66, 66, 252); text-align: center;}
-.highlight {color:red;border-radius: 5px solid red; font-weight: bold;}
+.highlight {color: red;border: 2px solid red;border-radius: 5px;font-weight: bold;}
 a {color: rgb(13, 13, 250); text-decoration: underline;font-family: 'Times New Roman', serif;}
 a:hover {color:rgb(0, 68, 255); text-decoration: none; font-family: 'Times New Roman', serif; background-color: rgb(5, 70, 100); padding:0px;}
 ol {list-style-type:circle; cursor:pointer; color:rgb(255, 255, 255);}
@@ -10,11 +10,12 @@ ol {list-style-type:circle; cursor:pointer; color:rgb(255, 255, 255);}
 .btn:hover {padding: 0.5rem; background-color: rgb(5, 10, 47);color:white;}
 .box {border-radius: 10px; transition: all 0.5s ease-in-out; background-color: green;}
 .box:hover {border-radius: 10px; transition: all 0.5s ease-in-out;box-shadow: 0 5px 25px rgba(0,0,0,0.1); cursor:pointer;  transform: rotate(360deg);}
-.column1of3 {color:black; padding:10px; margin:0px; float: left;  width:300px;  width:300px;}
-.column2of3 {background-color:rgb(173, 222, 246); padding:10px; margin:0px; float: left;  width:300px;}
-.column3of3 {background-color:rgb(223, 125, 195); padding:10px; margin:0px; float: left;  width:400px;}
-.column1of2 {background-color:rgb(223, 125, 195); color:rgb(255, 251, 251); padding:10px; margin:0px; float: left; width:50rem;}
-footer {background-color: rgb(40, 39, 39);}
+.column1of3 {color:black; padding:10px; flex: 1; min-width: 250px; margin: 10px;}
+.column2of3 {background-color:rgb(173, 222, 246); padding:10px;flex: 1; min-width: 250px; margin: 10px;float:left;}
+.column3of3 {background-color:rgb(223, 125, 195); padding:1em; flex: 1; min-width: 250px; margin: 10px;}
+.column1of2 {background-color:rgb(173, 172, 173); color:rgb(255, 251, 251); padding:1em; flex: 1; min-width: 250px; margin: 10px;}
+.container {display: flex;flex-wrap: wrap;gap: 10px;}
+footer {background-color: rgb(40, 39, 39); padding: 1em;}
 li {color: rgb(3, 108, 255); text-align: left;}
 th{background-color: aqua;}
 td{padding:8px;}
@@ -25,7 +26,7 @@ h1 {text-align: center; color: rgb(12, 12, 239);}
 
 @media screen and (max-width:768px) {body{padding:10px;}
                                     .main-nav{flex-direction:column; align-items:center;}
-                                    .btn{width:90%; text-align:center;}
+                                    .btn{width:100%; text-align:center;}
                                     .container{flex-direction:column;}
                                     .box{width:100%; height:auto;}
                                      footer div{flex-direction:column;}
@@ -41,3 +42,9 @@ h1 {text-align: center; color: rgb(12, 12, 239);}
                           fieldset{padding:10px;}
                           textarea{width:100%;}
                           input[type="submit"]{width:100%;}}
+
+.container {display: flex;flex-wrap: wrap;}
+.container > div {flex: 1;min-width: 250px;margin: 10px;}
+@media (max-width:768px) {
+  .container { flex-direction: column;}
+}
